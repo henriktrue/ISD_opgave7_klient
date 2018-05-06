@@ -35,7 +35,7 @@ int main(int argc, char** argv) {
     
     std::string id = "2";     // get from pos to the end
     
-    string json_set= "{\"jsonrpc\": \"2.0\", \"method\": \"Store_Temp\", \"params\": \""+variable+"\" ,\"id\": \""+id+"\"}";
+    string json_set= "{\"jsonrpc\": \"2.0\", \"method\": \"Store_Val\", \"params\": \""+variable+"\" ,\"id\": \""+id+"\"}";
      cout << "Sending:" << json_set << endl;
         //Get value frequently.
         tcp.Send(json_set);
@@ -47,7 +47,7 @@ int main(int argc, char** argv) {
                 cout << "Server Response: " << rec;
         }
    
-    string json_get= "{\"jsonrpc\": \"2.0\", \"method\": \"Read_Latest_Temp\", \"id\": \""+id+"\"}";
+    string json_get= "{\"jsonrpc\": \"2.0\", \"method\": \"Read_Latest_Val\", \"id\": \""+id+"\"}";
     while(1)
     {
         cout << "Sending:" << json_get << endl;
@@ -58,9 +58,9 @@ int main(int argc, char** argv) {
         string rec = tcp.receive();
         if( rec != "" )
         {
-                cout << "Server Response: " << rec;
+                cout << "Server is Response: " << rec;
         }
-        sleep(5);
+        sleep(4);
 
     }
     return 0;
