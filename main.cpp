@@ -1,9 +1,3 @@
-/* 
- * File:   main.cpp
- * Author: JCT & Tobias Valbjørn
- * Created on 13 March 2018
- */
-
 #include <cstdlib>
 #include <iostream>
 #include <sstream>
