@@ -48,21 +48,7 @@ int main(int argc, char** argv) {
         }
    
     string json_get= "{\"jsonrpc\": \"2.0\", \"method\": \"Read_Latest_Val\", \"id\": \""+id+"\"}";
-    while(1)
-    {
-        cout << "Sending:" << json_get << endl;
-        //Get value frequently.
-        tcp.Send(json_get);
-           
-        //Receive the string containing the value
-        string rec = tcp.receive();
-        if( rec != "" )
-        {
-                cout << "Server is Response: " << rec;
-        }
-        sleep(4);
 
-    }
     return 0;
 }
 
